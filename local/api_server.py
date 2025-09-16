@@ -130,6 +130,7 @@ def answer_with_gpt(query: str, docs: list[dict]) -> dict:
         "- Do NOT merge everything into one long list.\n"
         "- Do NOT add an extra summary at the end. Only the structured list.\n"
         "- If multiple chunks give conflicting values (e.g., 25 MPa vs 32 MPa), explicitly state the differences.\n\n"
+        "If confidence < 70%, show the top 2–3 candidate passages and check consistency before answering.\n"
         f"Context:\n{context}\n\nQuestion: {query}\n\nAnswer based ONLY on the context above:"
     )
 
